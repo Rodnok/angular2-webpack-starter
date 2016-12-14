@@ -21,9 +21,10 @@ import { XLarge } from './x-large';
 export class HomeComponent {
   // Set our default values
   localState = { value: '' };
+  date;
   // TypeScript public modifiers
   constructor(public appState: AppState, public title: Title) {
-
+    setInterval(() => this.date = new Date(), 1000);
   }
 
   ngOnInit() {
