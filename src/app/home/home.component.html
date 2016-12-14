@@ -9,6 +9,10 @@
 
   <h3>Today's Date: {{date | date: 'medium' }}</h3>
 
+  <pre *ngFor="let user of users">
+    {{user.username}} + {{user.roles}}
+  </pre>
+
   <div>
     For hot module reloading run
     <pre>npm run start:hmr</pre>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { AppState } from '../app.service';
 import { Title } from './title';
+import { UsersService } from '../services/usersService';
 import { XLarge } from './x-large';
 
 @Component({
@@ -23,8 +24,9 @@ export class HomeComponent {
   localState = { value: '' };
   date;
   // TypeScript public modifiers
-  constructor(public appState: AppState, public title: Title) {
+  constructor(public appState: AppState, public title: Title, public users: UsersService) {
     setInterval(() => this.date = new Date(), 1000);
+    this.users = users.get()
   }
 
   ngOnInit() {
