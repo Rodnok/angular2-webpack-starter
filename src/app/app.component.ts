@@ -40,6 +40,11 @@ import { AppState } from './app.service';
           About
         </a>
       </span>
+      <span>
+      <a [routerLink]=" ['./contact']" routerLinkActive="active">
+      Contact
+        </a>
+    </span>
     </nav>
 
     <main>
