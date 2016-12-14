@@ -9,14 +9,16 @@
 
   <h3>Today's Date: {{date | date: 'medium' }}</h3>
 
-  <pre *ngFor="let user of users">
-    {{user.username}} + {{user.roles}}
-  </pre>
+  <hr>
 
-  <div>
-    For hot module reloading run
-    <pre>npm run start:hmr</pre>
-  </div>
+  <h4>Users:</h4>
+  <table>
+    <tr *ngFor="let user of users | async" [class.superuser]="user.superuser">
+      <td>{{user.id}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.roles}}</td>
+    </tr>
+  </table>
 
   <hr>
 

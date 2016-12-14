@@ -15,7 +15,11 @@ import { XLarge } from './x-large';
     Title
   ],
   // Our list of styles in our component. We may add more to compose many styles together
-  styleUrls: [ './home.component.css' ],
+  styles: [`
+  .superuser {
+    background-color: #eee;
+  }
+`],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
   templateUrl: './home.component.html'
 })
@@ -27,12 +31,7 @@ export class HomeComponent {
   // TypeScript public modifiers
   constructor(public appState: AppState, public title: Title, public usersService: UsersService) {
     setInterval(() => this.date = new Date(), 1000);
-    usersService.get()
-        .subscribe(
-            data => this.users = data,
-            err => console.log(err),
-            () => console.log('Complete')
-        );
+    this.users = usersService.get();
   }
 
   ngOnInit() {
