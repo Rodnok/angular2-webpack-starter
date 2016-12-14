@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 34,
+      "username": "spiderman",
+      "roles": ["admin", "user", "superhero"]
+    },
+    {
+      "id": 67,
+      "username": "batman",
+      "roles": ["user", "superhero"]
+    },
+    {
+      "id": 22,
+      "username": "aquaman",
+      "roles": ["fish", "human"]
+    }
+  ]
+}

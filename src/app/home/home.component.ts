@@ -23,10 +23,16 @@ export class HomeComponent {
   // Set our default values
   localState = { value: '' };
   date;
+  users;
   // TypeScript public modifiers
-  constructor(public appState: AppState, public title: Title, public users: UsersService) {
+  constructor(public appState: AppState, public title: Title, public usersService: UsersService) {
     setInterval(() => this.date = new Date(), 1000);
-    this.users = users.get()
+    usersService.get()
+        .subscribe(
+            data => this.users = data,
+            err => console.log(err),
+            () => console.log('Complete')
+        );
   }
 
   ngOnInit() {
