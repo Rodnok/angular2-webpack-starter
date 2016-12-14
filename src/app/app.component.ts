@@ -45,6 +45,11 @@ import { AppState } from './app.service';
       Contact
         </a>
     </span>
+    <span>
+        <a [routerLink]=" ['./wiki']" routerLinkActive="active">
+         Wiki
+         </a>
+    </span>
     </nav>
 
     <main>

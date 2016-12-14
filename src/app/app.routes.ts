@@ -3,6 +3,7 @@ import { HomeComponent } from './home';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { ContactComponent } from './contact/contact.component';
+import { Wikipedia } from './wikipedia/wikipedia.component'
 
 import { DataResolver } from './app.resolver';
 
@@ -16,5 +17,6 @@ export const ROUTES: Routes = [
       .then((comp: any) => comp.default),
   },
   { path: 'contact', component: ContactComponent},
+  { path: 'wiki', component: Wikipedia},
   { path: '**',    component: NoContentComponent },
 ];
